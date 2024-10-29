@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void clearScreen() {
+    // Clear the terminal screen
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
+}
+
+void setColor(const char* colorCode) {
+    // Set the terminal text color
+    printf("%s", colorCode);
+}
+
+void resetColor() {
+    // Reset text color to default
+    printf("\033[0m");
+}
+
+void printBatmanLogo() {
+    // Simple ASCII art of the Batman logo
+    setColor("\033[1;33m"); // Bright yellow color
+    printf("      _==/          i     i          \\==_\n");
+    printf("    /XX/            |\\___/|            \\XX\\\n");
+    printf("  /XXXX\\            |XXXXX|            /XXXX\\\n");
+    printf(" /XXXXXX\\_         _XXXXXXX_         _/XXXXXX\\\n");
+    printf("/XXXXXXXXXX\\       /XXXXXXXXX\\       /XXXXXXXXXX\\\n");
+    printf("\\XXXXXXXXXXX\\     /XXXXXXXXXXX\\     /XXXXXXXXXXX/\n");
+    printf(" \\XXXXXXXXXXX\\   /XXXXXXXXXXXXX\\   /XXXXXXXXXXX/\n");
+    printf("  \\XXXXXXXXXXX\\_/XXXXXXXXXXXXXXX\\_/XXXXXXXXXXX/\n");
+    printf("   \\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/\n");
+    printf("     \\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/\n");
+    printf("       \\XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/\n");
+    printf("         \\XXXXXXXXXXXXXXXXXXXXXXXXXXXXX/\n");
+    printf("           \\XXXXXXXXXXXXXXXXXXXXXXXXX/\n");
+    printf("             \\XXXXXXXXXXXXXXXXXXXXX/\n");
+    printf("               \\XXXXXXXXXXXXXXXXX/\n");
+    printf("                 \\XXXXXXXXXXXXX/\n");
+    printf("                   \\XXXXXXXXX/\n");
+    printf("                     \\XXXXXXX/\n");
+    printf("                       \\XXXXX/\n");
+    printf("                         \\XXX/\n");
+    printf("                           \\X/\n");
+    resetColor();
+}
+
+int main() {
+    clearScreen();
+    printBatmanLogo();
+
+    // Your game code goes here
+
+    return 0;
+}
